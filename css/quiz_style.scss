@@ -1,18 +1,32 @@
 /* Quiz styles */
 
+/* Variables */
+$backColor: aliceblue;
+$darkBlue: #064277;
+$lightBlue: #58a0e0;
+$fontFamSans: sans-serif;
+$fontFamSerif: serif;
+$marginLeft: 50px;
+$padding: 10px;
+/* End Variables */
+
+@mixin border($borderColor: 2px solid $darkBlue, $borderRadius: 20px){
+    border: $borderColor;
+    border-radius: $borderRadius;
+}
+
 header {
-    border: 2px solid #064277;
-    border-radius: 20px;
+    @include border;
     margin: 10px auto;
-    padding: 10px;
-    background-color: aliceblue;
+    padding: $padding;
+    background-color: $backColor;
     text-align: center;
 }
 
 body {
     width: 600px;
     margin: auto;
-    font-family:sans-serif;
+    font-family:$fontFamSans;
     font-size: 1em;
     font-style:oblique;
     background-color: #dadadb
@@ -20,62 +34,58 @@ body {
 
 
 h1 {
-    color:#58a0e0;
+    color: $lightBlue;
 }
 
 #content {
-    border: 2px solid #064277;
-    border-radius: 20px;
+    @include border;
     margin: 10px auto;
-    padding: 10px;
-    background-color: aliceblue;
+    padding: $padding;
+    background-color: $backColor;
 }
 
 #list{
-    border: 2px solid #064277;
-    border-radius: 20px;
-    background-color: aliceblue;
+    @include border;
+    background-color: $backColor;
 }
 
 h2 {
-    color: #064277;
+    color: $darkBlue;
 }
 
 h3 {
-    margin-left: 50px;
-    color:#58a0e0
+    margin-left: $marginLeft;
+    color: $lightBlue;
 }
 
 ul{
-    margin-left: 50px;
+    margin-left: $marginLeft;
 }
 
 p{
-    font-family: serif;
+    font-family: $fontFamSerif;
     font-style:normal;
 }
 
 .samplepara {
-    border: 3px solid #58a0e0;
-    border-radius: 5px;
-    padding: 10px;
+    @include border(3px solid $lightBlue, 5px);
+    padding: $padding;
     background-color: white;
 }
 
 footer {
-    border: 2px solid #064277;
+    @include border;
     border-radius: 20px;
     margin: 10px auto;
-    padding: 10px;
-    background-color: aliceblue;
-}
+    padding: $padding;
+    background-color: $backColor;
 
-#footer {
-    font-size: .75em;
-    font-style:italic;
-    font-weight: bold;
-    color: #064277;
-    text-align: center;
+    #footer {
+        font-size: .75em;
+        font-style:italic;
+        font-weight: bold;
+        color: $darkBlue;
+        text-align: center;
+    }
 }
-
 
